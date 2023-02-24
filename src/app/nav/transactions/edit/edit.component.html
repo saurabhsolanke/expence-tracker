@@ -1,0 +1,71 @@
+<div class="container">
+    <h1>Update Post</h1>
+
+    <a routerLink="/transactions" class="btn btn-primary">Back</a>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="product_name">product_name:</label>
+            <input formControlName="product_name" id="product_name" type="text" [(ngModel)]="transactions.product_name" class="form-control">
+            <div *ngIf="f['product_name'].touched && f['product_name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['product_name'].errors && f['product_name'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="product_desc">Body</label>
+            <input formControlName="product_desc" id="product_desc" type="text" [(ngModel)]="transactions.product_desc" class="form-control">
+            <div *ngIf="f['product_desc'].touched && f['product_desc'].invalid" class="alert alert-danger">
+                <div *ngIf="f['product_desc'].errors && f['product_desc'].errors['required']">Body is required.</div>
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label for="title">Title:</label>
+            <input formControlName="title" id="title" type="text" [(ngModel)]="transactions.product_name" class="form-control">
+            <div *ngIf="f['title'].touched && f['title'].invalid" class="alert alert-danger">
+                <div *ngIf="f['title'].errors && f['title'].errors['required']">Title is required.</div>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="product_price">Body</label>
+            <input formControlName="product_price" id="product_price" type="text" [(ngModel)]="transactions.product_price" class="form-control">
+            <div *ngIf="f['product_price'].touched && f['product_price'].invalid" class="alert alert-danger">
+                <div *ngIf="f['product_price'].errors && f['product_price'].errors['required']">Body is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="product_quantity">Title:</label>
+            <input formControlName="product_quantity" id="product_quantity" type="text" [(ngModel)]="transactions.product_quantity" class="form-control">
+            <div *ngIf="f['product_quantity'].touched && f['product_quantity'].invalid" class="alert alert-danger">
+                <div *ngIf="f['product_quantity'].errors && f['product_quantity'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="mode" class="col-md-4 col-form-label text-md-right">Select type of
+                transaction</label>
+            <div class="col-md-6">
+                <!-- <label for="sel1">Select type of transaction</label> -->
+                <select class="form-control" formControlName="payment_mode" [(ngModel)]="transactions.payment_mode" name="payment_mode">
+                    <option value="">---transaction type---</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                </select>
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label for="body">Body</label>
+            <input formControlName="body" id="body" type="text" [(ngModel)]="transactions.body" class="form-control">
+            <div *ngIf="f['body'].touched && f['body'].invalid" class="alert alert-danger">
+                <div *ngIf="f['body'].errors && f['body'].errors['required']">Body is required.</div>
+            </div>
+        </div> -->
+
+        <!-- Validation for button 
+            [disabled]="!form.valid" -->
+
+        <button class="btn btn-primary" type="submit" >Update</button>
+    </form>
+</div>

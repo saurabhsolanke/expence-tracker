@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>View Post</h1>
+
+    <a routerLink="/transactions" class="btn btn-primary">Back</a>
+
+    <div>
+        <strong>ID:</strong>
+        <p>{{ transactions.id }}</p>
+    </div>
+
+    <div>
+        <strong>Title:</strong>
+        <p>{{transactions.product_name}}</p>
+    </div>
+
+    <div>
+        <strong>Description:</strong>
+        <p> {{transactions.product_desc}}</p>
+    </div>
+    <div>
+        <strong>Price:</strong>
+        <p> {{ transactions.product_price }}</p>
+    </div>
+    <div>
+        <strong>Quantity:</strong>
+        <p> {{transactions.product_quantity}}</p>
+    </div>
+
+    <div>
+        <strong>Mode:</strong>
+        <p> {{transactions.payment_mode}}</p>
+    </div>
+</div>

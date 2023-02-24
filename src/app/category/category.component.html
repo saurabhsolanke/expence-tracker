@@ -1,0 +1,39 @@
+<app-nav></app-nav>
+<p class="mt-5">
+    &nbsp;
+</p>
+
+<div class="container  mt-5 px-5">
+    <div class="col-9 d-flex justify-content-center">
+
+        <div class="card">
+            <div class="card-header">
+                <label for="category" class="col col-form-label text-md-right">Add Category</label>
+            </div>
+            <form [formGroup]="form1" (ngSubmit)="submit1()">
+
+                <div class="card-body">
+                    
+                    <div class="col">
+                        <input type="text" formControlName="category" name="category" class="form-control" id="category"
+                            placeholder="Fuel">
+                        <div *ngIf="f['category'].touched && f['category'].invalid" class="errors text-danger">
+                            <strong *ngIf="f['category'].errors && f['category'].errors['required']">Required </strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer d-flex justify-content-end">
+                    <button type="submit" [disabled]="form1.pristine || form1.invalid" class="btn btn-primary">ADD</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-1">
+<!-- <div class="container" *ngFor="category of categories">
+    {{category.name}}
+</div> -->
+    </div>
+
+</div>

@@ -1,0 +1,163 @@
+<app-nav></app-nav>
+<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> -->
+<div class="container mt-5">
+
+    <button routerLink="/transactions" class="btn btn-primary">Transactions</button> &nbsp;
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Category
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form [formGroup]="form1" (ngSubmit)="submit1()">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                            <div class="form-group row">
+                                <label for="category" class="col-md-4 col-form-label text-md-right">Add Category</label>
+                                <div class="col-md-4">
+                                    <input type="text" formControlName="category" name="category"
+                                        class="form-control" id="category" placeholder="lunch at hotel">
+                                    <div *ngIf="f['category'].touched && f['category'].invalid"
+                                        class="errors text-danger">
+                                        <strong
+                                            *ngIf="f['category'].errors && f['category'].errors['required']">Title
+                                            is
+                                            required.
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+    <div class="container mt-5 border shadow">
+
+        <form [formGroup]="form" (ngSubmit)="submit(transaction)">
+
+            <div class="form-group row mt-3">
+                <label for="Product name" class="col-md-4 col-form-label text-md-right">Name</label>
+                <div class="col-md-6">
+                    <input type="text" formControlName="product_name" name="product_name" class="form-control"
+                        id="product_name" placeholder="lunch at hotel">
+                    <div *ngIf="f['product_name'].touched && f['product_name'].invalid" class="errors text-danger">
+                        <strong *ngIf="f['product_name'].errors && f['product_name'].errors['required']">Title is
+                            required.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <label for="Product name" class="col-md-4 col-form-label text-md-right">Description</label>
+                <div class="col-md-6">
+                    <input type="text" formControlName="product_desc" name="product_desc" class="form-control"
+                        id="product_desc" placeholder="hotel J W Marriot">
+                    <div *ngIf="f['product_desc'].touched && f['product_desc'].invalid" class="errors text-danger">
+                        <div *ngIf="f['product_desc'].errors && f['product_desc'].errors['required']">Title is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <label for="Product name" class="col-md-4 col-form-label text-md-right">Amount</label>
+                <div class="col-md-6">
+                    <input type="number" formControlName="product_price" name="product_price" class="form-control"
+                        id="product_price" placeholder="Eg: 500">
+                    <div *ngIf="f['product_price'].touched && f['product_price'].invalid" class="errors text-danger">
+                        <div *ngIf="f['product_price'].errors && f['product_price'].errors['required']">Title is
+                            required.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <label for="Product name" class="col-md-4 col-form-label text-md-right">Category</label>
+                <div class="col-md-6">
+                    <select class="form-control" formControlName="product_quantity" name="product_quantity">
+                        <option value=""> ---Category---  </option>
+                        <option value="Studies"> Studies </option>
+                        <option value="Fuel"> Fuel  </option>
+                        <option value="Eating Out"> Eating Out  </option>
+                        <option value="Grocories"> Grocories  </option>
+
+                        <!-- <option *ngFor="let category of categories"></option> -->
+                    </select>
+                    <div *ngIf="f['product_quantity'].touched && f['product_quantity'].invalid" class="errors text-danger">
+                        <div *ngIf="f['product_quantity'].errors && f['product_quantity'].errors['required']">Title is
+                            required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <label for="Product name" class="col-md-4 col-form-label text-md-right">Select type of
+                    transaction</label>
+                <div class="col-md-6">
+                    <!-- <label for="sel1">Select type of transaction</label> -->
+                    <select class="form-control" formControlName="payment_mode" name="payment_mode">
+                        <option value="">---transaction type---</option>
+                        <option value="Debit">Debit</option>
+                        <option value="Credit">Credit</option>
+                    </select>
+                    <div *ngIf="f['payment_mode'].touched && f['payment_mode'].invalid" class="errors text-danger">
+                        <div *ngIf="f['payment_mode'].errors && f['payment_mode'].errors['required']">Title is
+                            required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-3 mb-3 offset-md-4">
+                <button type="submit" name="submit" value="Add Transaction" class="btn btn-primary">
+                    ADD
+                    <!-- [disabled]="!form.valid" -->
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+<!-- <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input formControlName="title" id="title" type="text" class="form-control">
+        <div *ngIf="f['title'].touched && f['title'].invalid" class="alert alert-danger">
+            <div *ngIf="f['title'].errors && f['title'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="body">Body</label>
+        <textarea formControlName="body" id="body" type="text" class="form-control">
+        </textarea>
+        <div *ngIf="f['body'].touched && f['body'].invalid" class="alert alert-danger">
+            <div *ngIf="f['body'].errors && f['body'].errors['required']">Body is required.</div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+</form> -->

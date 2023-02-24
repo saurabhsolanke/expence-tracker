@@ -1,0 +1,80 @@
+{
+  "transactions": [],
+  "category": [
+    {
+      "category": "Fuel",
+      "id": 1
+    },
+    {
+      "category": "study",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "title": "ksjefnkwejnf",
+      "body": "ksjdkjndfkn",
+      "id": 1
+    },
+    {
+      "title": "qdwqd",
+      "body": "qwdqdd",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "saurabh",
+      "email": "Saurabh.solanke@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "name": "swapnil",
+      "email": "Swapnil@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "name": "nayan",
+      "email": "nayan@gmail.com",
+      "password": "password"
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "id": 4
+    },
+    {
+      "email": "admin",
+      "password": "adminq",
+      "id": 5
+    },
+    {
+      "email": "wefwe",
+      "password": "wewefw",
+      "id": 6
+    },
+    {
+      "email": "wefwe",
+      "password": "wewefw",
+      "id": 7
+    },
+    {
+      "email": "wefwe",
+      "password": "wewefw",
+      "id": 8
+    },
+    {
+      "email": "admin",
+      "password": "admin",
+      "id": 9
+    },
+    {
+      "email": "admin",
+      "password": "admin",
+      "id": 10
+    }
+  ]
+}
