@@ -3,17 +3,14 @@
     &nbsp;
 </p>
 
-<div class="container  mt-5 px-5">
-    <div class="col-9 d-flex justify-content-center">
-
+<div class="container row  mt-5 px-5">
+    <div class="col-6 d-flex justify-content-center">
         <div class="card">
             <div class="card-header">
                 <label for="category" class="col col-form-label text-md-right">Add Category</label>
             </div>
             <form [formGroup]="form1" (ngSubmit)="submit1()">
-
                 <div class="card-body">
-                    
                     <div class="col">
                         <input type="text" formControlName="category" name="category" class="form-control" id="category"
                             placeholder="Fuel">
@@ -22,18 +19,49 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-footer d-flex justify-content-end">
-                    <button type="submit" [disabled]="form1.pristine || form1.invalid" class="btn btn-primary">ADD</button>
+                    <button type="submit" [disabled]="form1.pristine || form1.invalid"
+                        class="btn btn-primary">ADD</button>
                 </div>
             </form>
         </div>
     </div>
-
-    <div class="container mt-1">
-<!-- <div class="container" *ngFor="category of categories">
-    {{category.name}}
-</div> -->
+    <div class="col-6">
+        <div class="container">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">Search User</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" class="form-control" name="category" [(ngModel)]="category"
+                        (ngModelChange)="Search()" placeholder="Search here">
+                    <!-- -->
+                </div>
+                <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                        Must be 8-20 characters long.
+                    </span>
+                </div>
+               
+            </div>
+            <br>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let category of categories" >
+                    <th scope="row"> {{category.id}} </th>
+                    <td>{{category.category}}</td>
+                    <td> <a [routerLink]="[ category.id, 'edit']" class="btn btn-secondary">Edit</a></td>
+                    <td><button class="btn btn-danger" type="button"
+                        (click)="delete1(category.id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
 </div>

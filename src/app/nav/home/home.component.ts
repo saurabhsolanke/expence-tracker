@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Observable, of } from 'rxjs';
 import { tap, delay, map, mergeMap } from 'rxjs/operators';
 import { TransactionService } from 'src/app/transaction.service';
@@ -27,7 +28,8 @@ export class HomeComponent implements OnInit {
 
   constructor(public transaction: TransactionService,
     private router: Router,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -42,41 +44,45 @@ export class HomeComponent implements OnInit {
     this.form1 = new FormGroup({
       category: new FormControl('', Validators.required)
     });
+    this.getcategory();
   }
 
   getClock(): Observable<Date> {
     return interval(1000).pipe(
-       mergeMap(() => of(new Date()))
+      mergeMap(() => of(new Date()))
     )
- }
+  }
 
   get f() {
     return this.form.controls;
   }
 
   getcategory() {
-    this.http.get<any[]>(this.transaction.apiURL + 'towns')
+    this.http.get<any[]>(this.transaction.apiURL + '/category/')
       .subscribe(data => {
-        /* reinitialize the towns array */
         this.categories = [];
-        /****/
         this.categories = data;
         console.log(data)
       });
   }
 
-  submit(transactions:any) {
+  submit(transactions: any) {
     console.log(this.form.value);
     this.transaction.create(this.form.value).subscribe((res: any) => {
       console.log(' created successfully!');
+      this.toastr.success('Added!', 'Transaction!');
       this.router.navigateByUrl('transactions');
     })
   }
 
   submit1() {
     console.log(this.form1.value);
-    this.transaction.create(this.form1.value).subscribe((res: any) => {
+    this.transaction.create1(this.form1.value).subscribe((res: any) => {
+      this.router.navigateByUrl('home');
+      this.toastr.success('Added!', 'Category!');
       console.log(' created successfully!', 'Added Category!');
+      this.getcategory();
+
     })
   }
 }

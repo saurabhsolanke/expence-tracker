@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './nav/home/home.component';
 import { CommonModule } from '@angular/common';
 import { TransactionsComponent } from './nav/transactions/transactions.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './nav/about/about.component';
@@ -19,8 +20,7 @@ import { SearchFilterPipe } from './search-filter.pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CategoryComponent } from './category/category.component';
-
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,9 @@ import { CategoryComponent } from './category/category.component';
     HttpClientModule,
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

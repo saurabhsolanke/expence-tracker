@@ -93,13 +93,8 @@
                 <label for="Product name" class="col-md-4 col-form-label text-md-right">Category</label>
                 <div class="col-md-6">
                     <select class="form-control" formControlName="product_quantity" name="product_quantity">
-                        <option value=""> ---Category---  </option>
-                        <option value="Studies"> Studies </option>
-                        <option value="Fuel"> Fuel  </option>
-                        <option value="Eating Out"> Eating Out  </option>
-                        <option value="Grocories"> Grocories  </option>
-
-                        <!-- <option *ngFor="let category of categories"></option> -->
+                        <option value="">---select---</option>                       
+                        <option *ngFor="let category of categories"> {{category.category}} </option>
                     </select>
                     <div *ngIf="f['product_quantity'].touched && f['product_quantity'].invalid" class="errors text-danger">
                         <div *ngIf="f['product_quantity'].errors && f['product_quantity'].errors['required']">Title is
@@ -115,10 +110,11 @@
                 <div class="col-md-6">
                     <!-- <label for="sel1">Select type of transaction</label> -->
                     <select class="form-control" formControlName="payment_mode" name="payment_mode">
-                        <option value="">---transaction type---</option>
+                        <option value="">---transaction type--- </option>
                         <option value="Debit">Debit</option>
                         <option value="Credit">Credit</option>
                     </select>
+                  
                     <div *ngIf="f['payment_mode'].touched && f['payment_mode'].invalid" class="errors text-danger">
                         <div *ngIf="f['payment_mode'].errors && f['payment_mode'].errors['required']">Title is
                             required.

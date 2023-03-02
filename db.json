@@ -1,12 +1,21 @@
 {
-  "transactions": [],
+  "transactions": [
+    {
+      "product_name": "Pasha",
+      "product_desc": "jwmarriot ",
+      "product_price": 4000,
+      "product_quantity": "Eatout",
+      "product_mode": "",
+      "id": 1
+    }
+  ],
   "category": [
     {
       "category": "Fuel",
       "id": 1
     },
     {
-      "category": "study",
+      "category": "Eatout",
       "id": 2
     }
   ],
