@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TransactionService } from '../transaction.service';
+import { TransactionService } from '../../transaction.service';
 
 @Component({
   selector: 'app-category',

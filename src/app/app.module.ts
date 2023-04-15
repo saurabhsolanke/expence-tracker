@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './nav/home/home.component';
@@ -13,15 +13,19 @@ import { AboutComponent } from './nav/about/about.component';
 import { FooterComponent } from './nav/footer/footer.component';
 import { EditComponent } from './nav/transactions/edit/edit.component';
 import { ViewComponent } from './nav/transactions/view/view.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { CategoryComponent } from './category/category.component';
+import { CategoryComponent } from './nav/category/category.component';
 import { ToastrModule } from 'ngx-toastr';
-
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,9 +51,30 @@ import { ToastrModule } from 'ngx-toastr';
     Ng2OrderModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            'clientId'
+          )
+        },
+        // {
+        //   id: FacebookLoginProvider.PROVIDER_ID,
+        //   provider: new FacebookLoginProvider('clientId')
+        // }
+      ],
+      onError: (err) => {
+        console.error(err);
+      }
+    } as SocialAuthServiceConfig,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

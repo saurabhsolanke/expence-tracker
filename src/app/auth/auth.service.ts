@@ -21,12 +21,15 @@ export class AuthService {
   isUserLoggedIn: boolean = false;
   isAuthenticated: boolean = false;
   loggedinUser: string | null | undefined;
+  email:string='';
+  password:string='';
+
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  login(userName: string, password: string) {
-    console.log(userName, password);
-    this.isUserLoggedIn = userName == 'admin' && password == 'admin';
+  login(email, password) {
+    console.log(this.email, password);
+    this.isUserLoggedIn = email == 'admin' && password == 'admin';
     console.log(this.loggedinUser = localStorage.getItem('token'));
     localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn ? "true" : "false");
 
@@ -39,7 +42,9 @@ export class AuthService {
     );
   }
 
-  
+  googleSignOn(){
+    
+  }
 
   logout(): void {
     this.isUserLoggedIn = false;
@@ -52,3 +57,7 @@ export class AuthService {
   // }
 
 }
+function userName(userName: any, password: string) {
+  throw new Error('Function not implemented.');
+}
+

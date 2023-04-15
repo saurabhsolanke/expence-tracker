@@ -19,7 +19,6 @@ export class TransactionService {
     })
   }
 
-
   getAll(): Observable<transactions[]> {
     return this.http.get<transactions[]>(this.apiURL + '/transactions')
   }
@@ -61,5 +60,3 @@ export class TransactionService {
     return this.http.delete(this.apiURL + '/category/' + id, this.httpOptions)
   }
 }
-
-

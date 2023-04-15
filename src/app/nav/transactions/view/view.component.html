@@ -1,33 +1,37 @@
-<div class="container">
-    <h1>View Post</h1>
+<app-nav></app-nav>
+
+<div class="container mt-5">
+    <h1>Transaction details</h1>
 
     <a routerLink="/transactions" class="btn btn-primary">Back</a>
 
-    <div>
-        <strong>ID:</strong>
-        <p>{{ transactions.id }}</p>
-    </div>
+    <div class="container col-4 border">
+        <div class="form-group border row">
+            <label class="col display-6 d-flex justify-content-end">ID:</label>
+            <label class="col display-6 text-muted">{{ transactions.id }}</label>
+        </div>
 
-    <div>
-        <strong>Title:</strong>
-        <p>{{transactions.product_name}}</p>
-    </div>
+        <div class="form-group border row">
+            <label class="col display-6 d-flex justify-content-end">Title:</label>
+            <label class="col display-6 text-muted">{{transactions.product_name}}</label>
+        </div>
 
-    <div>
-        <strong>Description:</strong>
-        <p> {{transactions.product_desc}}</p>
-    </div>
-    <div>
-        <strong>Price:</strong>
-        <p> {{ transactions.product_price }}</p>
-    </div>
-    <div>
-        <strong>Quantity:</strong>
-        <p> {{transactions.product_quantity}}</p>
-    </div>
+        <div class="form-group border row">
+            <label class="col display-6 d-flex justify-content-end">Description:</label>
+            <label class="col display-6 text-muted"> {{transactions.product_desc}}</label>
+        </div>
+        <div class="form-group border row">
+            <label class="col display-6 d-flex justify-content-end">Price:</label>
+            <label class="col display-6 text-muted">₹{{ transactions.product_price }}</label>
+        </div>
+        <div class="form-group border row">
+            <label class="col display-6 d-flex justify-content-end">Quantity:</label>
+            <label class="col display-6 text-muted"> {{transactions.product_quantity}}</label>
+        </div>
 
-    <div>
-        <strong>Mode:</strong>
-        <p> {{transactions.payment_mode}}</p>
+        <div class="form-group border row">
+            <label class="col display-6 d-flex  lead  justify-content-end">Mode:</label>
+            <label class="col display-6 text-muted"> {{transactions.payment_mode}}</label>
+        </div>
     </div>
 </div>
