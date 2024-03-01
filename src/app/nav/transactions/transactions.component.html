@@ -1,37 +1,37 @@
 <app-nav></app-nav>
 <div class="container mt-3 border table-responsive-md">
-    <!-- <div class="row"> -->
-    <!-- Chart -->
-    <!-- <div class="container">
+  <!-- <div class="row"> -->
+  <!-- Chart -->
+  <!-- <div class="container">
             <p class="display-6"> this is my chart </p>
             <div id="divChart">
                 <canvas id="myChart"></canvas>
             </div>
         </div> -->
-    <!-- Chart -->
-    <div class="container border">
-        <!-- search -->
-        <div class="container">
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label">Search User</label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" class="form-control" name="product_name" [(ngModel)]="product_name"
-                        (ngModelChange)="Search()" placeholder="Search here">
-                    <!-- -->
-                </div>
-                <div class="col-auto">
-                    <span id="passwordHelpInline" class="form-text">
-                        Must be 8-20 characters long.
-                    </span>
-                </div>
-               
-            </div>
-            <br>
+  <!-- Chart -->
+  <div class="container border">
+    <!-- search -->
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label">Search User</label>
+        </div>
+        <div class="col-auto">
+          <input type="text" class="form-control" name="product_name" [(ngModel)]="product_name"
+            (ngModelChange)="Search()" placeholder="Search here">
+          <!-- -->
+        </div>
+        <div class="col-auto">
+          <span id="passwordHelpInline" class="form-text">
+            Must be 8-20 characters long.
+          </span>
         </div>
 
-        <!-- <form>
+      </div>
+      <br>
+    </div>
+
+    <!-- <form>
             <div class="row mt-3">
                 <div class="col-md-4">
                     <div class="input-group mb-3">
@@ -46,64 +46,62 @@
             </div>
 
         </form> -->
-    </div>
+  </div>
 
-    <table class="table table-striped mt-lg-3">
-        <thead class="thead-inverse">
-            <tr>
-                <th (click)="sort('id')" scope="col">id<i class="fa fa-sort" aria-hidden="true"></i></th>
-                <th (click)="sort('first_name')" scope="col">Transaction Name<i class="fa fa-sort"
-                        aria-hidden="true"></i></th>
-                <th>Desc</th>
-                <th>Amount</th>
-                <th>Category</th>
-                <th>Credit/Debit</th>
-                <!-- <th>Balance ₹ </th> -->
-                <!-- <th>Date</th> -->
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let transaction of transactions | orderBy: key: reverse ">
-                <td>
-                    {{transaction.id}}
-                </td>
-                <td>
-                    {{transaction.product_name}}
-                </td>
-                <td>
-                    {{transaction.product_desc}}
-                </td>
-                <td>
-                    {{transaction.product_price}}
-                </td>
-                <td>
-                    {{transaction.product_quantity}}
-                </td>
-                <td>
-                    {{transaction.payment_mode}}
-                </td>
-                <!-- <td>
+  <table class="table table-striped mt-lg-3">
+    <thead class="thead-inverse">
+      <tr>
+        <th (click)="sort('id')" scope="col">id<i class="fa fa-sort" aria-hidden="true"></i></th>
+        <th (click)="sort('first_name')" scope="col">Transaction Name<i class="fa fa-sort" aria-hidden="true"></i></th>
+        <th>Desc</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Credit/Debit</th>
+        <!-- <th>Balance ₹ </th> -->
+        <!-- <th>Date</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions | orderBy: key: reverse " [ngClass]="transaction.payment_mode === 'Debit' ? 'bg-danger-emphasis' : 'bg-success-emphasis' ">
+        <td>
+          {{transaction.id}}
+        </td>
+        <td>
+          {{transaction.product_name}}
+        </td>
+        <td>
+          {{transaction.product_desc}}
+        </td>
+        <td>
+          {{transaction.product_price}}
+        </td>
+        <td>
+          {{transaction.product_quantity}}
+        </td>
+        <td>
+          <p [ngClass]="transaction.payment_mode === 'Debit' ? 'badge bg-danger' : 'badge bg-success' ">
+            {{transaction.payment_mode}}</p>
+        </td>
+        <!-- <td>
                     {{transaction.createdAt}}
                 </td> -->
-                <td>
-                    <a [routerLink]="[ transaction.id, 'view']" class="btn btn-dark">View</a>
-                    <a [routerLink]="[ transaction.id, 'edit']" class="btn btn-secondary">Edit</a>
-                    <a><button class="btn btn-danger" type="button"
-                            (click)="deletePost(transaction.id)">Delete</button></a>
-                </td>
-            </tr>
+        <td>
+          <a [routerLink]="[ transaction.id, 'view']" class="btn btn-dark">View</a>
+          <a [routerLink]="[ transaction.id, 'edit']" class="btn btn-secondary">Edit</a>
+          <a><button class="btn btn-danger" type="button" (click)="deletePost(transaction.id)">Delete</button></a>
+        </td>
+      </tr>
 
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>Sum</td>
-
-                <td>
-
-                </td>
-            </tr>
-        </tfoot>
-    </table>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Sum</td><td></td><td></td>
+        <td>
+          <p class="badge bg-dark">₹ {{total}}</p>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
 </div>
 <!-- <div class="col-12 col-md-2">
             <h6 class="display-6"> Graph or pie chart </h6>

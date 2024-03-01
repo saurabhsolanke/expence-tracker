@@ -1,22 +1,494 @@
 {
   "transactions": [
     {
-      "product_name": "Pasha",
-      "product_desc": "jwmarriot ",
-      "product_price": 4000,
-      "product_quantity": "Eatout",
-      "product_mode": "",
+      "product_name": "penton ville road",
+      "product_desc": "8 rent",
+      "product_price": 120,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
       "id": 1
     },
     {
-      "product_name": "dinner ",
-      "product_desc": "jwmarriot ",
-      "product_price": 3262,
-      "product_quantity": "Eatout",
-      "payment_mode": "Credit",
+      "product_name": "Trafalgar Square",
+      "product_desc": "20 rent",
+      "product_price": 240,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
       "createdAt": "",
       "category": "",
       "id": 2
+    },
+    {
+      "product_name": "the angel, islington",
+      "product_desc": "6 rent",
+      "product_price": 100,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 3
+    },
+    {
+      "product_name": "rent",
+      "product_desc": "rent the angel",
+      "product_price": 6,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 4
+    },
+    {
+      "product_name": "community ",
+      "product_desc": "200 salary",
+      "product_price": 200,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 5
+    },
+    {
+      "product_name": "birthday gift",
+      "product_desc": "to rucha",
+      "product_price": 10,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 6
+    },
+    {
+      "product_name": "Marley bone station",
+      "product_desc": "rent 25 ",
+      "product_price": 200,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 7
+    },
+    {
+      "product_name": "nayan's visit",
+      "product_desc": "visit to station",
+      "product_price": 200,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 8
+    },
+    {
+      "product_name": "Leicester square",
+      "product_desc": "22 rent",
+      "product_price": 260,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 9
+    },
+    {
+      "product_name": "rent from Nayan ",
+      "product_desc": "marlybone station",
+      "product_price": 25,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 10
+    },
+    {
+      "product_name": "rent to nayan",
+      "product_desc": "regent street ",
+      "product_price": 26,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 11
+    },
+    {
+      "product_name": "rent from shr",
+      "product_desc": "Trafalgar Square",
+      "product_price": 20,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 12
+    },
+    {
+      "product_name": "Mayfair",
+      "product_desc": "50 rent",
+      "product_price": 400,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 13
+    },
+    {
+      "product_name": "rent from Nayan ",
+      "product_desc": "Leicester square",
+      "product_price": 22,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 14
+    },
+    {
+      "product_name": "rent to shr",
+      "product_desc": "for auston road",
+      "product_price": 6,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 15
+    },
+    {
+      "product_name": "beauti content winner",
+      "product_desc": "gift",
+      "product_price": 10,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 16
+    },
+    {
+      "product_name": "rent to rucha",
+      "product_desc": "station",
+      "product_price": 25,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 17
+    },
+    {
+      "product_name": "rent from Nayan",
+      "product_desc": "The angel",
+      "product_price": 6,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 18
+    },
+    {
+      "product_name": "community ",
+      "product_desc": "50 for tax benefit",
+      "product_price": 50,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 19
+    },
+    {
+      "product_name": "electric company",
+      "product_desc": "utility rent dice x 4",
+      "product_price": 150,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 20
+    },
+    {
+      "product_name": "rent from Rucha ",
+      "product_desc": "the angle",
+      "product_price": 6,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 21
+    },
+    {
+      "product_name": "rent to rucha ",
+      "product_desc": "vine street",
+      "product_price": 16,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 22
+    },
+    {
+      "product_name": "rent from rucha",
+      "product_desc": "marleybone station",
+      "product_price": 25,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 23
+    },
+    {
+      "product_name": "rent to nayan",
+      "product_desc": "station kingcross",
+      "product_price": 25,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 24
+    },
+    {
+      "product_name": "rent to rucha ",
+      "product_desc": "pall mall",
+      "product_price": 10,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 25
+    },
+    {
+      "product_name": "rent from rucha ",
+      "product_desc": "the angel",
+      "product_price": 6,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 26
+    },
+    {
+      "product_name": "to nayan ",
+      "product_desc": "strand ",
+      "product_price": 18,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 27
+    },
+    {
+      "product_name": "rent from shr",
+      "product_desc": "Trafalgar Square",
+      "product_price": 20,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 28
+    },
+    {
+      "product_name": "rent from shr",
+      "product_desc": "Marylebone station",
+      "product_price": 25,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 29
+    },
+    {
+      "product_name": "rent to nayan",
+      "product_desc": "Oxford",
+      "product_price": 26,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 30
+    },
+    {
+      "product_name": "rent from shr",
+      "product_desc": "pentonville",
+      "product_price": 8,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 31
+    },
+    {
+      "product_name": "rent from Nayan",
+      "product_desc": "electric company",
+      "product_price": 32,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 32
+    },
+    {
+      "product_name": "salary go",
+      "product_desc": "salary",
+      "product_price": 200,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 33
+    },
+    {
+      "product_name": "income tax",
+      "product_desc": "tax",
+      "product_price": 200,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 34
+    },
+    {
+      "product_name": "rent to rucha",
+      "product_desc": "pink",
+      "product_price": 12,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 35
+    },
+    {
+      "product_name": "rent from Nayan",
+      "product_desc": "electricity",
+      "product_price": 28,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 36
+    },
+    {
+      "product_name": "rent from shr",
+      "product_desc": "mayfair",
+      "product_price": 50,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 37
+    },
+    {
+      "product_name": "rent from Nayan ",
+      "product_desc": "Mayfair",
+      "product_price": 50,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 38
+    },
+    {
+      "product_name": "rent to nayan ",
+      "product_desc": "station ",
+      "product_price": 25,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 39
+    },
+    {
+      "product_name": "rent to shr",
+      "product_desc": "white Chappel",
+      "product_price": 20,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 40
+    },
+    {
+      "product_name": "rent from rucha ",
+      "product_desc": "electricity 11*4 ",
+      "product_price": 44,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 41
+    },
+    {
+      "product_name": "rent from shr",
+      "product_desc": "mayfair",
+      "product_price": 50,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 42
+    },
+    {
+      "product_name": "completion crossword",
+      "product_desc": "100",
+      "product_price": 100,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 43
+    },
+    {
+      "product_name": "water bill",
+      "product_desc": "water bill 6 *4",
+      "product_price": 24,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 44
+    },
+    {
+      "product_name": "rent to shr",
+      "product_desc": "green",
+      "product_price": 28,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 45
+    },
+    {
+      "product_name": "rent from shr",
+      "product_desc": "mayfair",
+      "product_price": 50,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 46
+    },
+    {
+      "product_name": "station",
+      "product_desc": "station",
+      "product_price": 25,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 47
+    },
+    {
+      "product_name": "birthday",
+      "product_desc": "birthday from each 10",
+      "product_price": 30,
+      "product_quantity": "Fuel",
+      "payment_mode": "Credit",
+      "createdAt": "",
+      "category": "",
+      "id": 48
+    },
+    {
+      "product_name": "to nayan",
+      "product_desc": "green",
+      "product_price": 26,
+      "product_quantity": "Fuel",
+      "payment_mode": "Debit",
+      "createdAt": "",
+      "category": "",
+      "id": 49
     }
   ],
   "category": [
@@ -27,6 +499,10 @@
     {
       "category": "Eatout",
       "id": 2
+    },
+    {
+      "category": "grocerry",
+      "id": 3
     }
   ],
   "posts": [
@@ -45,7 +521,7 @@
     {
       "id": 1,
       "name": "saurabh",
-      "email": "Saurabh.solanke@gmail.com",
+      "email": "saurabh.solanke@gmail.com",
       "password": "password"
     },
     {

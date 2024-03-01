@@ -30,6 +30,7 @@ export class AuthService {
   login(email, password) {
     console.log(this.email, password);
     this.isUserLoggedIn = email == 'admin' && password == 'admin';
+    this.isUserLoggedIn = email == 'saurabh' && password == 'saurabh';
     console.log(this.loggedinUser = localStorage.getItem('token'));
     localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn ? "true" : "false");
 
@@ -43,7 +44,7 @@ export class AuthService {
   }
 
   googleSignOn(){
-    
+
   }
 
   logout(): void {
