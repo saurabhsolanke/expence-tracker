@@ -15,9 +15,9 @@ import { EditComponent } from './nav/transactions/edit/edit.component';
 import { ViewComponent } from './nav/transactions/view/view.component';
 import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchFilterPipe } from './search-filter.pipe';
-import { Ng2OrderModule } from 'ng2-order-pipe';
+// import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CategoryComponent } from './nav/category/category.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -47,8 +47,8 @@ import {
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    Ng2SearchPipeModule,
-    Ng2OrderModule,
+    // Ng2SearchPipeModule,
+    // Ng2OrderModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),

@@ -64,7 +64,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaction of transactions | orderBy: key: reverse " [ngClass]="transaction.payment_mode === 'Debit' ? 'bg-danger-emphasis' : 'bg-success-emphasis' ">
+      <tr *ngFor="let transaction of transactions" [ngClass]="transaction.payment_mode === 'Debit' ? 'bg-danger-emphasis' : 'bg-success-emphasis' ">
         <td>
           {{transaction.id}}
         </td>
