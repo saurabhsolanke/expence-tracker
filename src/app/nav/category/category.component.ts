@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TransactionService } from '../../transaction.service';
 
@@ -10,7 +10,7 @@ import { TransactionService } from '../../transaction.service';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  form1!: FormGroup;
+  form1!: UntypedFormGroup;
   category:any;
   
   constructor(public transaction: TransactionService, private http: HttpClient,
@@ -18,8 +18,8 @@ export class CategoryComponent implements OnInit {
     
     categories: any = [];
   ngOnInit(): void {
-    this.form1 = new FormGroup({
-      category: new FormControl('', Validators.required)
+    this.form1 = new UntypedFormGroup({
+      category: new UntypedFormControl('', Validators.required)
     });
     this.getcategory();
   }

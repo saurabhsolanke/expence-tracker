@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TransactionService } from 'src/app/transaction.service';
 import { transactions } from '../../transactions';
@@ -24,12 +24,12 @@ export class EditComponent implements OnInit {
       this.transactions = data;
     }); 
        
-    this.form = new FormGroup({
-      product_name: new FormControl('', [Validators.required]),
-      product_desc: new FormControl('', Validators.required),
-      product_price: new FormControl('', Validators.required),
-      product_quantity: new FormControl('', Validators.required),
-      product_mode: new FormControl('', Validators.required)
+    this.form = new UntypedFormGroup({
+      product_name: new UntypedFormControl('', [Validators.required]),
+      product_desc: new UntypedFormControl('', Validators.required),
+      product_price: new UntypedFormControl('', Validators.required),
+      product_quantity: new UntypedFormControl('', Validators.required),
+      product_mode: new UntypedFormControl('', Validators.required)
     });
   }
 

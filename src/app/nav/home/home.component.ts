@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { interval, Observable, of } from 'rxjs';
@@ -14,8 +14,8 @@ import { TransactionService } from 'src/app/transaction.service';
 })
 export class HomeComponent implements OnInit {
 
-  form!: FormGroup;
-  form1!: FormGroup;
+  form!: UntypedFormGroup;
+  form1!: UntypedFormGroup;
 
   product_name: string | undefined;
   public categories: any = [];
@@ -32,17 +32,17 @@ export class HomeComponent implements OnInit {
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      product_name: new FormControl('', [Validators.required]),
-      product_desc: new FormControl('', Validators.required),
-      product_price: new FormControl('', [Validators.required]),
-      product_quantity: new FormControl('', Validators.required),
-      payment_mode: new FormControl('', [Validators.required]),
-      createdAt: new FormControl('', Validators.required),
-      category: new FormControl('', Validators.required)
+    this.form = new UntypedFormGroup({
+      product_name: new UntypedFormControl('', [Validators.required]),
+      product_desc: new UntypedFormControl('', Validators.required),
+      product_price: new UntypedFormControl('', [Validators.required]),
+      product_quantity: new UntypedFormControl('', Validators.required),
+      payment_mode: new UntypedFormControl('', [Validators.required]),
+      createdAt: new UntypedFormControl('', Validators.required),
+      category: new UntypedFormControl('', Validators.required)
     });
-    this.form1 = new FormGroup({
-      category: new FormControl('', Validators.required)
+    this.form1 = new UntypedFormGroup({
+      category: new UntypedFormControl('', Validators.required)
     });
     this.getcategory();
   }
