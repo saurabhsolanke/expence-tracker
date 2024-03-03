@@ -21,6 +21,7 @@
     "angularx-social-login": "^4.1.0",
     "bootstrap-icons": "^1.10.3",
     "chart.js": "^3.8.0",
+    "firebase": "^10.8.1",
     "ng2-order-pipe": "^0.1.5",
     "ng2-search-filter": "^0.5.1",
     "ngx-pagination": "^6.0.1",
