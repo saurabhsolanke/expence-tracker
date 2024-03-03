@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +11,7 @@ import { AuthService } from '../auth/auth.service';
 export class NavComponent implements OnInit {
 
   email: any;
-  constructor(private authenticationService: AuthService) { }
+  constructor(private authenticationService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     console.log(this.email);
@@ -19,5 +20,6 @@ export class NavComponent implements OnInit {
   logout() {
     this.authenticationService.logout()
       .subscribe();
+    this.router.navigate(['logout']);
   }
 }
