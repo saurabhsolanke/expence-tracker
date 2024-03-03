@@ -61,14 +61,14 @@
                 <div class="row justify-content-center ">
                     <h2 class="display-2">Expense Tracker</h2>
                     <div class="col-5 px-5 mt-4 border shadow shadow-lg justify-content-start">
-                        <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" class="form-signin">
+                        <form [formGroup]="form" (ngSubmit)="login()" class="form-signin">
                             <div class="form-group mt-5 row">
                                 <label for="email" class="col-md-4 col-form-label">Email</label>
                                 <div class="col-md-8">
                                     <input type="text" id="email" class="form-control" name="email"
                                         formControlName="email" autocomplete="email" required="" autofocus>
                                     <strong
-                                        *ngIf="formData.controls['email'].invalid && (formData.controls['email'].dirty || formData.controls['email'].touched)"
+                                        *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)"
                                         class="form-text text-danger">Please enter valid Username</strong><br>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                     <input type="password" id="password" class="form-control" formControlName="password"
                                         name="password" autocomplete="password" required>
                                     <strong
-                                        *ngIf="formData.controls['password'].invalid && (formData.controls['password'].dirty || formData.controls['password'].touched)"
+                                        *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)"
                                         class="form-text text-danger">Please Enter Minimum 6 Digits</strong><br>
                                 </div>
                             </div><br>
@@ -98,12 +98,12 @@
                             </div><br>
                             <div class="form-group row mb-5">
                                 <div class="col offset-md-4">
-                                    <button type="submit" [disabled]="formData.pristine || formData.invalid"
+                                    <button type="submit" [disabled]="form.pristine || form.invalid"
                                         class="btn btn-primary">
                                         Sign In
                                     </button> &nbsp;
                                     <a routerLink="/login"> <button type="button" class="btn btn-dark"
-                                            (click)="formData.reset()">
+                                            (click)="form.reset()">
                                             Cancel
                                         </button> </a>
                                 </div>

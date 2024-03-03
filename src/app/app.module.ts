@@ -26,6 +26,9 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,9 @@ import {
     NgxPaginationModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SocialLoginModule
+    SocialLoginModule,
+    AngularFireModule.initializeApp(environment),
+    AngularFireAuthModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',
