@@ -56,7 +56,7 @@ import { environment } from 'src/environments/environment';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     SocialLoginModule,
-    AngularFireModule.initializeApp(environment),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
   providers: [{
