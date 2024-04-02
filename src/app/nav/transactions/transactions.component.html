@@ -67,9 +67,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaction of transactions" [ngClass]="transaction.payment_mode === 'Debit' ? 'bg-danger-emphasis' : 'bg-success-emphasis' ">
+      <tr *ngFor="let transaction of transactions; let i = index" [ngClass]="transaction.payment_mode === 'Debit' ? 'bg-danger-emphasis' : 'bg-success-emphasis' ">
         <td>
-          {{transaction.id}}
+          {{i+1}}
         </td>
         <td>
           {{transaction.product_name}}

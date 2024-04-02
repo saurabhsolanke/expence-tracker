@@ -40,17 +40,25 @@ export class LoginComponent implements OnInit {
 
    login() {
       this.isLoggingIn = true;
-  
+
       this.authService.signIn({
         email: this.form.value.email,
         password: this.form.value.password
       }).subscribe({
-        next: () => this.router.navigate(['home']),
-        error: error => {
-          this.isLoggingIn = false;
-         //  this.open(error.message, "OK", {
-         //    duration: 5000
-         //  })
+        next: (response: any) => {
+          if(response){
+            localStorage.setItem('uid', response.user.multiFactor.user.uid);
+            localStorage.setItem('email', response.user.multiFactor.user.email),
+            this.router.navigate(['home'])
+          }
+          else{
+            error: error => {
+              this.isLoggingIn = false;
+             //  this.open(error.message, "OK", {
+             //    duration: 5000
+             //  })
+            }
+          }
         }
       });
     }

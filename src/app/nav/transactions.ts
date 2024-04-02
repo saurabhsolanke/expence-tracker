@@ -6,6 +6,7 @@ export interface transactions {
     product_quantity:string;
     payment_mode: string;
     createdAt: string;
+    userid: string;
 
     // constructor(id: number,product_name: string,product_desc: string,product_price: string,product_quantity: string,payment_mode: string){
     //     this.id=id;

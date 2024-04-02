@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit {
 
   email: any;
+  loggedin_username!: string | null;
   constructor(private authenticationService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.email);
-    localStorage.getItem('email');
+    this.loggedin_username = localStorage.getItem('email');
   }
   logout() {
     this.authenticationService.logout()

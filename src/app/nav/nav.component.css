@@ -3,3 +3,7 @@ nav{
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,79,79,1) 100%);
 }
+.bg-secondary1{
+  background: rgb(113,112,112);
+background: linear-gradient(180deg, rgba(113,112,112,1) 0%, rgba(0,0,0,1) 100%);
+}

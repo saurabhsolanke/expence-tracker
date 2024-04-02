@@ -14,17 +14,24 @@ export class TransactionsComponent implements OnInit {
   amount: any;
   payment_mode: any;
   total = 0;
+  loggedin_userid!: string | null;
 
   constructor(private transactionauth: TransactionService) {}
   transactions!: transactions[];
 
   ngOnInit() {
+    this.loggedin_userid = localStorage.getItem('uid');
+
     this.transactionauth.getAll().subscribe((data: transactions[]) => {
-      this.transactions = data;
-      console.log(this.transactions);
-      for (var i = 0; i < this.transactions.length; i++) {
-        this.total += parseInt(this.transactions[i]['product_price']);
-        // console.log('total', this.total);
+      const txs = Object.values(data)
+      this.transactions = txs;
+       // Filter transactions for the logged-in user
+    const userTransactions = txs.filter(tx => tx.userid === this.loggedin_userid);
+    this.transactions = userTransactions;
+    console.log(userTransactions);
+      console.log(txs);
+      for (var i = 0; i < txs.length; i++) {
+        this.total += parseInt(txs[i].product_price);
       }
     });
   }

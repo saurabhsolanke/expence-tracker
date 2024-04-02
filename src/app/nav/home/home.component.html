@@ -55,7 +55,7 @@
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Name</label>
                 <div class="col-md-6 px-5">
                     <input type="text" formControlName="product_name" name="product_name" class="form-control"
-                        id="product_name" placeholder="lunch at hotel">
+                        id="product_name" placeholder="lunch at hotel" required>
                     <div *ngIf="f['product_name'].touched && f['product_name'].invalid" class="errors text-danger">
                         <strong *ngIf="f['product_name'].errors && f['product_name'].errors['required']">Title is
                             required.
@@ -68,7 +68,7 @@
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Description</label>
                 <div class="col-md-6 px-5">
                     <input type="text" formControlName="product_desc" name="product_desc" class="form-control"
-                        id="product_desc" placeholder="hotel J W Marriot">
+                        id="product_desc" placeholder="hotel J W Marriot" required>
                     <div *ngIf="f['product_desc'].touched && f['product_desc'].invalid" class="errors text-danger">
                         <div *ngIf="f['product_desc'].errors && f['product_desc'].errors['required']">Title is required.
                         </div>
@@ -80,7 +80,7 @@
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Amount</label>
                 <div class="col-md-6 px-5">
                     <input type="number" formControlName="product_price" name="product_price" class="form-control"
-                        id="product_price" placeholder="Eg: 500">
+                        id="product_price" placeholder="Eg: 500" required>
                     <div *ngIf="f['product_price'].touched && f['product_price'].invalid" class="errors text-danger">
                         <div *ngIf="f['product_price'].errors && f['product_price'].errors['required']">Title is
                             required.</div>
@@ -91,9 +91,9 @@
             <div class="form-group row mt-2">
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Category</label>
                 <div class="col-md-6 px-5">
-                    <select class="form-control" formControlName="product_quantity" name="product_quantity">
+                    <select class="form-control" formControlName="product_quantity" name="product_quantity" required>
                         <option value="">---select---</option>
-                        <option *ngFor="let category of categories"> {{category.category}} </option>
+                        <option *ngFor="let category of categories" [value]="category.category"> {{category.category}} </option>
                     </select>
                     <div *ngIf="f['product_quantity'].touched && f['product_quantity'].invalid" class="errors text-danger">
                         <div *ngIf="f['product_quantity'].errors && f['product_quantity'].errors['required']">Title is
@@ -108,7 +108,7 @@
                     transaction</label>
                 <div class="col-md-6 px-5">
                     <!-- <label for="sel1">Select type of transaction</label> -->
-                    <select class="form-control" formControlName="payment_mode" name="payment_mode">
+                    <select class="form-control" formControlName="payment_mode" name="payment_mode" required>
                         <option value="">---transaction type--- </option>
                         <option value="Debit">Debit</option>
                         <option value="Credit">Credit</option>

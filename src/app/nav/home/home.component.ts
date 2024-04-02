@@ -22,9 +22,12 @@ export class HomeComponent implements OnInit {
   product_desc: any;
   product_price: any;
   d = new Date();
-  time: string = this.d.getHours() + ':' + this.d.getMinutes();
+  time: string = this.d.getHours() + ':' + this.d.getMinutes() + new Date();
   product_quantity: any;
   payment_mode: any;
+  userid!: string | null;
+  loggedin_userid!: string | null;
+  loggedin_username!: string | null;
 
   constructor(public transaction: TransactionService,
     private router: Router,
@@ -32,13 +35,16 @@ export class HomeComponent implements OnInit {
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    console.log(this.time);
+    this.loggedin_username = localStorage.getItem('email');
+    this.loggedin_userid = localStorage.getItem('uid');
     this.form = new UntypedFormGroup({
       product_name: new UntypedFormControl('', [Validators.required]),
       product_desc: new UntypedFormControl('', Validators.required),
       product_price: new UntypedFormControl('', [Validators.required]),
       product_quantity: new UntypedFormControl('', Validators.required),
       payment_mode: new UntypedFormControl('', [Validators.required]),
-      createdAt: new UntypedFormControl('', Validators.required),
+      createdAt: new UntypedFormControl(this.d),
       category: new UntypedFormControl('', Validators.required)
     });
     this.form1 = new UntypedFormGroup({
@@ -58,8 +64,7 @@ export class HomeComponent implements OnInit {
   }
 
   getcategory() {
-    this.http.get<any[]>(this.transaction.apiURL + '/category/')
-      .subscribe(data => {
+    this.transaction.getAll1().subscribe(data => {
         this.categories = [];
         this.categories = data;
         console.log(data)
@@ -67,8 +72,13 @@ export class HomeComponent implements OnInit {
   }
 
   submit(transactions: any) {
+    const userid = localStorage.getItem('uid');
+    const transactionData = {
+      ...this.form.value,
+      userid: userid
+    };
     console.log(this.form.value);
-    this.transaction.create(this.form.value).subscribe((res: any) => {
+    this.transaction.create(transactionData).subscribe((res: any) => {
       console.log(' created successfully!');
       this.toastr.success('Added!', 'Transaction!');
       this.router.navigateByUrl('transactions');
