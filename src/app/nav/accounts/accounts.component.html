@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<div class="container-fluid row">
+    <div class="col mt-4">
+        <app-sidenavbar></app-sidenavbar>
+    </div>
+    <div class="col-10 h-100 mt-4">
+        <div class="container" [ngClass]="nightModeService.isNightMode == true ? 'bg-dark' : 'bg-light'">
+            <div class="container pt-5"><button type="button"
+                    [ngClass]="nightModeService.isNightMode == true ? 'btn  blue-dark text-white shadow' : 'btn blue-light text-white shadow' "
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add Category
+                </button>&nbsp;&nbsp;
+                <button type="button"
+                    [ngClass]="nightModeService.isNightMode == true ? 'btn blue-dark text-white shadow' : 'btn blue-light text-white shadow' "
+                    data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    Add Transaction
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <p>account name</p>: 
+        </div>
+</div>
+

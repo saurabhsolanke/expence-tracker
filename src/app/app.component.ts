@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NightModeService } from './night-mode.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,4 +7,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'expense';
+  constructor(public nightModeService : NightModeService) { }
 }

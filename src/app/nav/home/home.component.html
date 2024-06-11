@@ -1,139 +1,234 @@
 <app-nav></app-nav>
-<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> -->
-<div class="container mt-5">
+<div class="container-fluid row">
+  <div class="col mt-4">
+    <app-sidenavbar></app-sidenavbar>
+  </div>
+  <div class="col-10 mt-4">
+    <div class="container" [ngClass]="nightModeService.isNightMode == true ? 'bg-dark' : 'bg-light'">
+      <div class="container pt-5">
+        <!-- <button routerLink="/transactions"
+          [ngClass]="nightModeService.isNightMode == true ? 'btn blue-dark btn-secondary text-white' : 'btn btn-secondary blue-light text-white' ">Transactions</button>
+        &nbsp; -->
+        <button data-bs-toggle="modal" data-bs-target="#exampleModal2"
+          [ngClass]="nightModeService.isNightMode == true ? 'btn blue-dark btn-secondary text-white shadow' : 'btn btn-secondary blue-light text-white shadow' ">Add
+          Acccount</button>
+        &nbsp;
+        <!-- <button type="button"
+          [ngClass]="nightModeService.isNightMode == true ? 'btn  blue-dark text-white shadow' : 'btn blue-light text-white shadow' "
+          data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Add Category
+        </button>&nbsp;&nbsp;
+        <button type="button"
+          [ngClass]="nightModeService.isNightMode == true ? 'btn blue-dark text-white shadow' : 'btn blue-light text-white shadow' "
+          data-bs-toggle="modal" data-bs-target="#exampleModal1">
+          Add Transaction
+        </button> -->
+      </div>
 
-    <button routerLink="/transactions" class="btn btn-primary">Transactions</button> &nbsp;
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form [formGroup]="form1" (ngSubmit)="submit1()">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
 
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Add Category
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form [formGroup]="form1" (ngSubmit)="submit1()">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="form-group row">
+                  <label for="category" class="col-md-4 col-form-label text-md-right">Add Category</label>
+                  <div class="col-md-4">
+                    <input type="text" formControlName="category" name="category" class="form-control" id="category"
+                      placeholder="lunch at hotel">
+                    <div *ngIf="f['category'].touched && f['category'].invalid" class="errors text-danger">
+                      <strong *ngIf="f['category'].errors && f['category'].errors['required']">Title
+                        is
+                        required.
+                      </strong>
                     </div>
-                    <div class="modal-body">
-
-                            <div class="form-group row">
-                                <label for="category" class="col-md-4 col-form-label text-md-right">Add Category</label>
-                                <div class="col-md-4">
-                                    <input type="text" formControlName="category" name="category"
-                                        class="form-control" id="category" placeholder="lunch at hotel">
-                                    <div *ngIf="f['category'].touched && f['category'].invalid"
-                                        class="errors text-danger">
-                                        <strong
-                                            *ngIf="f['category'].errors && f['category'].errors['required']">Title
-                                            is
-                                            required.
-                                        </strong>
-                                    </div>
-                                </div>
-                            </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
-                    </div>
-                </form>
+                  </div>
                 </div>
-            </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn blue-dark text-light" data-bs-dismiss="modal">Save changes</button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
 
-    <div class="container col-md-7 col-10 mt-5 p-2 shadow">
-
-        <form [formGroup]="form" (ngSubmit)="submit(transaction)">
-
-            <div class="form-group row mt-3">
+      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form [formGroup]="form" (ngSubmit)="submit(transaction)">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Transaction</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="form-group row mt-3">
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Name</label>
                 <div class="col-md-6 px-5">
-                    <input type="text" formControlName="product_name" name="product_name" class="form-control"
-                        id="product_name" placeholder="lunch at hotel" required>
-                    <div *ngIf="f['product_name'].touched && f['product_name'].invalid" class="errors text-danger">
-                        <strong *ngIf="f['product_name'].errors && f['product_name'].errors['required']">Title is
-                            required.
-                        </strong>
-                    </div>
+                  <input type="text" formControlName="product_name" name="product_name" class="form-control"
+                    id="product_name" placeholder="lunch at hotel" required>
+                  <div *ngIf="f['product_name'].touched && f['product_name'].invalid" class="errors text-danger">
+                    <strong *ngIf="f['product_name'].errors && f['product_name'].errors['required']">Title is
+                      required.
+                    </strong>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-            <div class="form-group row mt-2">
+              <div class="form-group row mt-2">
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Description</label>
                 <div class="col-md-6 px-5">
-                    <input type="text" formControlName="product_desc" name="product_desc" class="form-control"
-                        id="product_desc" placeholder="hotel J W Marriot" required>
-                    <div *ngIf="f['product_desc'].touched && f['product_desc'].invalid" class="errors text-danger">
-                        <div *ngIf="f['product_desc'].errors && f['product_desc'].errors['required']">Title is required.
-                        </div>
+                  <input type="text" formControlName="product_desc" name="product_desc" class="form-control"
+                    id="product_desc" placeholder="hotel J W Marriot" required>
+                  <div *ngIf="f['product_desc'].touched && f['product_desc'].invalid" class="errors text-danger">
+                    <div *ngIf="f['product_desc'].errors && f['product_desc'].errors['required']">Title is required.
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-            <div class="form-group row mt-2">
+              <div class="form-group row mt-2">
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Amount</label>
                 <div class="col-md-6 px-5">
-                    <input type="number" formControlName="product_price" name="product_price" class="form-control"
-                        id="product_price" placeholder="Eg: 500" required>
-                    <div *ngIf="f['product_price'].touched && f['product_price'].invalid" class="errors text-danger">
-                        <div *ngIf="f['product_price'].errors && f['product_price'].errors['required']">Title is
-                            required.</div>
-                    </div>
+                  <input type="number" formControlName="product_price" name="product_price" class="form-control"
+                    id="product_price" placeholder="Eg: 500" required>
+                  <div *ngIf="f['product_price'].touched && f['product_price'].invalid" class="errors text-danger">
+                    <div *ngIf="f['product_price'].errors && f['product_price'].errors['required']">Title is
+                      required.</div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-            <div class="form-group row mt-2">
+              <div class="form-group row mt-2">
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Category</label>
                 <div class="col-md-6 px-5">
-                    <select class="form-control" formControlName="product_quantity" name="product_quantity" required>
-                        <option value="">---select---</option>
-                        <option *ngFor="let category of categories" [value]="category.category"> {{category.category}} </option>
-                    </select>
-                    <div *ngIf="f['product_quantity'].touched && f['product_quantity'].invalid" class="errors text-danger">
-                        <div *ngIf="f['product_quantity'].errors && f['product_quantity'].errors['required']">Title is
-                            required.
-                        </div>
+                  <select class="form-control" formControlName="product_quantity" name="product_quantity" required>
+                    <option value="">---select---</option>
+                    <option *ngFor="let category of categories" [value]="category.category"> {{category.category}}
+                    </option>
+                  </select>
+                  <div *ngIf="f['product_quantity'].touched && f['product_quantity'].invalid"
+                    class="errors text-danger">
+                    <div *ngIf="f['product_quantity'].errors && f['product_quantity'].errors['required']">Title is
+                      required.
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-            <div class="form-group row mt-2">
+              <div class="form-group row mt-2">
                 <label for="Product name" class="col-md-4 px-5 d-flex col-form-label text-md-right">Select type of
-                    transaction</label>
+                  transaction</label>
                 <div class="col-md-6 px-5">
-                    <!-- <label for="sel1">Select type of transaction</label> -->
-                    <select class="form-control" formControlName="payment_mode" name="payment_mode" required>
-                        <option value="">---transaction type--- </option>
-                        <option value="Debit">Debit</option>
-                        <option value="Credit">Credit</option>
-                    </select>
+                  <!-- <label for="sel1">Select type of transaction</label> -->
+                  <select class="form-control" formControlName="payment_mode" name="payment_mode" required>
+                    <option value="">---transaction type--- </option>
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                  </select>
 
-                    <div *ngIf="f['payment_mode'].touched && f['payment_mode'].invalid" class="errors text-danger">
-                        <div *ngIf="f['payment_mode'].errors && f['payment_mode'].errors['required']">Title is
-                            required.
-                        </div>
+                  <div *ngIf="f['payment_mode'].touched && f['payment_mode'].invalid" class="errors text-danger">
+                    <div *ngIf="f['payment_mode'].errors && f['payment_mode'].errors['required']">Title is
+                      required.
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" name="submit" value="Add Transaction" class="btn blue-dark text-light">Save
+                  changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
-            <div class="col-md-6 d-flex justify-content-end px-4 mt-3 mb-3 offset-md-4">
-                <button type="submit" name="submit" value="Add Transaction" class="btn btn-primary">
-                    ADD
-                    <!-- [disabled]="!form.valid" -->
-                </button>
-            </div>
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form [formGroup]="form2" (ngSubmit)="accountcreate()">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group row">
+                  <label for="account_name" class="col-md-4 col-form-label text-md-right">Account name</label>
+                  <div class="col-md-4">
+                    <input type="text" formControlName="account_name" name="account_name" class="form-control"
+                      id="account_name" placeholder="lunch at hotel">
+                    <!-- <div *ngIf="f['account_name'].touched && f['account_name'].invalid" class="errors text-danger">
+                      <strong *ngIf="f['account_name'].errors && f['account_name'].errors['required']">Title
+                        is
+                        required.
+                      </strong>
+                    </div> -->
+                  </div>
+                </div>
 
-        </form>
+                <div class="form-group row">
+                  <label for="account_type" class="col-md-4 col-form-label text-md-right">Type</label>
+                  <div class="col-md-4">
+                    <input type="text" formControlName="account_type" name="account_type" class="form-control"
+                      id="account_type" placeholder="lunch at hotel">
+                    <!-- <div *ngIf="f['account_type'].touched && f['account_type'].invalid" class="errors text-danger">
+                      <strong *ngIf="f['account_type'].errors && f['account_type'].errors['required']">Title
+                        is
+                        required.
+                      </strong>
+                    </div> -->
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="balance" class="col-md-4 col-form-label text-md-right">Balance</label>
+                  <div class="col-md-4">
+                    <input type="text" formControlName="balance" name="balance" class="form-control" id="balance"
+                      placeholder="lunch at hotel">
+                    <!-- <div *ngIf="f['balance'].touched && f['balance'].invalid" class="errors text-danger">
+                      <strong *ngIf="f['balance'].errors && f['balance'].errors['required']">Title
+                        is
+                        required.
+                      </strong>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" [attr.data-dismiss]="form1.valid ? 'modal' : null" class="btn blue-dark text-light">Save changes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="shadow p-2 mt-4 row">
+        <div class="container col-md-6 col-lg-4 col-sm-2 pt-3 px-md-5" *ngFor="let item of myaccount;let i = index">
+          <div class="card"
+            [ngClass]="nightModeService.isNightMode == true ? 'decoration text-light border-secondary' : 'bgc text-light border-secondary' ">
+            <img src="assets/images/pexels.jpg" class="img-fluid rounded h-25" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> {{item.account_name}}</h5>
+              <p class="card-text"> {{item.account_type}}</p>
+              <a [routerLink]="['/accounts', item.accountid]" class="btn btn-primary">Go to account</a>
+            </div>
+            <div class="card-footer">
+              <small class="text-light">Last updated 3 mins ago</small>
+              <!-- <button class="text-end btn btn-danger" (click)="deleteAccount(id)">Delete</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+  </div>
 </div>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
 
 <!-- <form [formGroup]="form" (ngSubmit)="submit()">
 
@@ -154,5 +249,5 @@
         </div>
     </div>
 
-    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    <button class="btn blue-dark" type="submit" [disabled]="!form.valid">Submit</button>
 </form> -->

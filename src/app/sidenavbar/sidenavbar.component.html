@@ -1,0 +1,6 @@
+<div class="sidebar shadow pt-5" [ngClass]="nightModeService.isNightMode == true ? 'bg-dark' : 'bg-light'">
+  <a [ngClass]="{'text-light': nightModeService.isNightMode, 'text-dark': !nightModeService.isNightMode, 'active text-light': isActive('/home')}" routerLink="/home">Home</a>
+  <a [ngClass]="{'text-light': nightModeService.isNightMode, 'text-dark': !nightModeService.isNightMode, 'active text-light': isActive('/transactions')}" routerLink="/transactions">Transactions</a>
+  <a [ngClass]="{'text-light': nightModeService.isNightMode, 'text-dark': !nightModeService.isNightMode, 'active text-light': isActive('/category')}" routerLink="/category">Category</a>
+  <a [ngClass]="{'text-light': nightModeService.isNightMode, 'text-dark': !nightModeService.isNightMode, 'active text-light': isActive('/about')}" routerLink="/about">About</a>
+</div>

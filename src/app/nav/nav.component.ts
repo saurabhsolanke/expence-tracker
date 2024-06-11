@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
-
+import { NightModeService } from '../night-mode.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -12,14 +12,16 @@ export class NavComponent implements OnInit {
 
   email: any;
   loggedin_username!: string | null;
-  constructor(private authenticationService: AuthService, private router: Router) { }
+  constructor(private authenticationService: AuthService, private router: Router, public nightModeService : NightModeService ) { }
 
   ngOnInit(): void {
     this.loggedin_username = localStorage.getItem('email');
   }
+
+  toggleNightMode() {
+    this.nightModeService.toggleNightMode();
+  }
   logout() {
-    this.authenticationService.logout()
-      .subscribe();
-    this.router.navigate(['logout']);
+    this.authenticationService.logout();
   }
 }

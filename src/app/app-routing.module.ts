@@ -9,6 +9,7 @@ import { ViewComponent } from './nav/transactions/view/view.component';
 import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { CategoryComponent } from './nav/category/category.component';
+import { AccountsComponent } from './nav/accounts/accounts.component';
 
 const routes: Routes = [
   // { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'logout', component: LogoutComponent},
   { path: 'transactions/:id/edit', component: EditComponent},
-  { path: 'transactions/:id/view', component: ViewComponent}
+  { path: 'transactions/:id/view', component: ViewComponent},
+  { path: 'accounts/:id', component: AccountsComponent},
 
 
 ];

@@ -25,7 +25,7 @@ export class AuthService {
   email:string='';
   password:string='';
 
-  constructor(private http: HttpClient, private router: Router, private auth: AngularFireAuth) { 
+  constructor(private http: HttpClient, private router: Router, private auth: AngularFireAuth) {
   }
   //   this.isUserLoggedIn = email == 'admin' && password == 'admin';
   //   this.isUserLoggedIn = email == 'saurabh' && password == 'saurabh';
@@ -45,7 +45,7 @@ export class AuthService {
     return from(this.auth.signInWithEmailAndPassword(
       params.email, params.password
     )).pipe(
-      catchError((error: FirebaseError) => 
+      catchError((error: FirebaseError) =>
         throwError(() => new Error(this.translateFirebaseErrorMessage(error)))
       )
     );
@@ -63,9 +63,16 @@ export class AuthService {
   //   localStorage.removeItem('isUserLoggedIn');
   // }
 
-  logout(): Observable<void> {
-    return from(this.auth.signOut());
+  logout() {
+    this.auth.signOut().then(() => {
+      this.router.navigate(['/login']);
+      localStorage.removeItem('isUserLoggedIn');
+    });
   }
+
+  // logout(): Observable<void> {
+  //   return from(this.auth.signOut());
+  // }
 
   // getAuthorizationToken() {
   //   const currentUser = JSON.parse(localStorage.getItem('currentUser'));

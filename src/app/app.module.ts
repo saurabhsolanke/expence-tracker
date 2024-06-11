@@ -29,6 +29,10 @@ import {
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
+import { NightModeService } from './night-mode.service';
+import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
+import { ContainerComponent } from './container/container.component';
+import { AccountsComponent } from './nav/accounts/accounts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +46,10 @@ import { environment } from 'src/environments/environment';
     LoginComponent,
     LogoutComponent,
     SearchFilterPipe,
-    CategoryComponent
+    CategoryComponent,
+    SidenavbarComponent,
+    ContainerComponent,
+    AccountsComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +86,9 @@ import { environment } from 'src/environments/environment';
         console.error(err);
       }
     } as SocialAuthServiceConfig,
-  }],
+  },
+  NightModeService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

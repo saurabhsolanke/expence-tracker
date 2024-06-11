@@ -5,8 +5,12 @@ export interface transactions {
     product_price: string;
     product_quantity:string;
     payment_mode: string;
-    createdAt: string;
-    userid: string;
+    createdAt: Date;
+    updatedAt: Date;
+    category: string;
+    type: string;
+    accountid: string;
+    uid: string;
 
     // constructor(id: number,product_name: string,product_desc: string,product_price: string,product_quantity: string,payment_mode: string){
     //     this.id=id;

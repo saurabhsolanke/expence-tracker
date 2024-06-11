@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { transactions } from './nav/transactions';
 import { environment } from 'src/environments/environment';
+import { accounts } from './nav/accounts';
 
 @Injectable({
   providedIn: 'root'
@@ -61,5 +62,25 @@ export class TransactionService {
 
   delete1(id: number) {
     return this.http.delete(this.apiURL + '/category.json' + id, this.httpOptions)
+  }
+
+  getAll2(): Observable<accounts[]> {
+    return this.http.get<accounts[]>(this.apiURL + '/accounts.json', this.httpOptions)
+  }
+
+  create2(transaction: any): Observable<accounts> {
+    return this.http.post<accounts>(this.apiURL + '/accounts.json', JSON.stringify(transaction), this.httpOptions)
+  }
+
+  find2(id: number): Observable<accounts> {
+    return this.http.get<accounts>(this.apiURL + '/accounts.json' + id)
+  }
+
+  update2(id: number, accounts: any): Observable<accounts> {
+    return this.http.put<accounts>(this.apiURL + '/accounts.json' + id, JSON.stringify(accounts), this.httpOptions)
+  }
+
+  delete2(id: number) {
+    return this.http.delete<accounts>(this.apiURL + '/accounts.json' + id, this.httpOptions)
   }
 }
